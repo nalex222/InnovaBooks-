@@ -1,1 +1,125 @@
-css/styles.css
+/* ------------------------------
+   TIPOGRAFÍA Y COLORES
+--------------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+:root {
+    --color-primario: #4A90E2;
+    --color-secundario: #1C1C1C;
+    --color-fondo: #F5F7FA;
+    --color-texto: #222;
+    --color-card: #fff;
+
+    --color-dark-fondo: #0f0f0f;
+    --color-dark-card: #1c1c1c;
+    --color-dark-texto: #e6e6e6;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--color-fondo);
+    color: var(--color-texto);
+    margin: 0;
+    padding: 0;
+    transition: 0.3s ease-in-out;
+}
+
+.dark-mode {
+    background: var(--color-dark-fondo);
+    color: var(--color-dark-texto);
+}
+
+/* ------------------------------
+   HEADER / LOGO / MENÚ
+--------------------------------*/
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: var(--color-primario);
+    color: white;
+    position: sticky;
+    top: 0;
+}
+
+header .logo {
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+}
+
+/* Modo oscuro botón */
+#darkToggle {
+    background: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 20px;
+    cursor: pointer;
+    color: var(--color-primario);
+}
+
+/* ------------------------------
+   BUSCADOR
+--------------------------------*/
+#searchBar {
+    width: 60%;
+    display: block;
+    margin: 25px auto;
+    padding: 12px 15px;
+    border-radius: 25px;
+    border: none;
+    font-size: 16px;
+}
+
+/* ------------------------------
+   SECCIÓN DE LIBROS
+--------------------------------*/
+.books-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 25px;
+    padding: 20px 50px;
+}
+
+.book {
+    background: var(--color-card);
+    padding: 15px;
+    border-radius: 16px;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+}
+
+.dark-mode .book {
+    background: var(--color-dark-card);
+}
+
+.book:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+.book img {
+    width: 100%;
+    border-radius: 10px;
+    height: 280px;
+    object-fit: cover;
+}
+
+.book a {
+    display: block;
+    margin-top: 10px;
+    padding: 10px;
+    background: var(--color-primario);
+    color: white;
+    border-radius: 10px;
+    text-decoration: none;
+}
